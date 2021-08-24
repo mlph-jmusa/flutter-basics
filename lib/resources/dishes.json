@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Fried galunggong",
+        "imageURL": "https://i0.wp.com/www.angsarap.net/wp-content/uploads/2018/06/Fried-Galunggong-Wide.jpg?fit=1080%2C810&ssl=1",
+        "ingredients": ["Galunggong fish", "Salt", "Cooking oil", "Pepper"],
+        "cookingSteps": ["1. Clean the fish and add salt all over its body.", "2. Heat the frying pan.", "3. Add cooking oil in the pan.", "4. Put the fish, cook for 3 min.", "5. Turn it upside down for another 3 min.", "6. Season with pepper(optional).", "7. Ready to serve."]
+    },
+    {
+        "name": "Tokneneng",
+        "imageURL": "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fimages.media-allrecipes.com%2Fuserphotos%2F4546347.jpg&w=596&h=399&c=sc&poi=face&q=85",
+        "ingredients": [
+            "12 eggs",
+            "oil for deep frying",
+            "4 tablespoons cornstarch, plus more as needed",
+            "bamboo skewer",
+            "¼ cup rice vinegar",
+            "¼ cup ketchup",
+            "¼ cup brown sugar",
+            "2 teaspoons soy sauce",
+            "1 cup all-purpose flour",
+            "½ cup water",
+            "salt and freshly ground black pepper to taste",
+            "red and yellow food coloring"
+        ],
+        "cookingSteps": [
+            "Step 1: Place eggs in a saucepan and cover with water. Bring to a boil, remove from heat, and let eggs stand in hot water for 15 minutes. Remove eggs from hot water, cool under cold running water, and peel.",
+            "Step 2 Combine rice vinegar, ketchup, brown sugar, and soy sauce in a saucepan. Heat over medium heat while stirring until sugar has dissolved, about 5 minutes. Stir sauce and let cool.",
+            "Step 3 Prepare the batter by adding a few drops of red and yellow food coloring to the water to get a deep orange color. Combine flour with salt and pepper in a bowl; pour in orange water and stir until there are no lumps.",
+            "Step 4 Heat oil in a wok to 375 degrees F (190 degrees C).",
+            "Step 5 Gently roll eggs in cornstarch to coat and shake off excess cornstarch. Dip into orange batter so they are fully covered. Poke eggs with the bamboo skewer and drop into the hot oil. Deep fry until the batter is crispy, about 2 minutes per side. Remove eggs with a slotted spoon and drain on paper towels."
+        ]
+    },
+    {
+        "name": "Sinigang na baboy",
+        "imageURL": "https://panlasangpinoy.com/wp-content/uploads/2017/03/Sinigang-na-Baboy-with-Gabi-Panlasang-Pinoy.jpg",
+        "ingredients": ["2 lbs. pork belly sliced into cubes",
+            "2 to 3 cups kangkong leaves",
+            "3 pieces long green chili pepper siling pansigang",
+            "2 pieces tomato quartered",
+            "1 cup sliced daikon radish labanos",
+            "10 to 12 pieces snake beans cut in 2 inch length pieces",
+            "1 piece onion quartered",
+            "15 pieces okra",
+            "2 pieces taro peeled and cut in half (gabi)",
+            "8 cups water",
+            "2 packs Knorr Sinigang sa Sampaloc Mix Original (20 gram pack)",
+            "3 tablespoons fish sauce patis",
+            "¼ teaspoon ground black pepper"],
+        "cookingSteps": ["1. Pour water into a cooking pot. Let boil",
+            "2. Add onion and tomato. Boil for 5 to 8 minutes.",
+            "3. Put the pork in the cooking pot. Boil for 25 minutes.",
+            "4. Add the taro. Cover and continue to boil for 30 minutes.",
+            "5. Add Knorr Sinigang sa Sampaloc mix, fish sauce, and ground black pepper; stir.",
+            "6. Put the daikon radish in. Cook for 3 to 5 minutes.",
+            "7. Add the chili peppers, okra, and snake beans. Cook for 7 minutes.",
+            "8. Add the kangkong. Cover the cooking pot and turn off the heat. Let it stay covered for 5 minutes.",
+            "9. Transfer to as serving bowl. Serve with a small bowl with patis and spicy chili.",
+            "10. Share and enjoy!"]
+    },
+    {
+        "name": "Adobong manok",
+        "imageURL": "https://panlasangpinoy.com/wp-content/uploads/2018/11/Filipino-Chicken-Adobo.jpg",
+        "ingredients": ["2 lbs chicken cut into serving pieces",
+            "3 pieces dried bay leaves",
+            "8 tablespoons soy sauce",
+            "4 tablespoons white vinegar",
+            "5 cloves garlic crushed",
+            "1 1/2 cups water",
+            "3 tablespoons cooking oil",
+            "1 teaspoon sugar",
+            "1/4 teaspoon salt optional",
+            "1 teaspoon whole peppercorn"],
+        "cookingSteps": ["1. Combine chicken, soy sauce, and garlic in a large bowl. Mix well. Marinate the chicken for at least 1 hour. Note: the longer the time, the better",
+            "2. Heat a cooking pot. Pour cooking oil.",
+            "3. When the oil is hot enough, pan-fry the marinated chicken for 2 minutes per side.",
+            "4. Pour-in the remaining marinade, including garlic. Add water. Bring to a boil",
+            "5. Add dried bay leaves and whole peppercorn. Simmer for 30 minutes or until the chicken gets tender",
+            "6. Add vinegar. Stir and cook for 10 minutes.",
+            "7. Put-in the sugar, and salt. Stir and turn the heat off.Serve hot. Share and Enjoy!"]
+    }
+]
+

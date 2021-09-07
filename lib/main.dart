@@ -71,7 +71,8 @@ class ImageContainer extends StatelessWidget {
         height: screenSize.width * 0.55,
         decoration:
             const BoxDecoration(shape: BoxShape.rectangle, color: Colors.blue),
-        child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYQhwSIg7wQ5_eL32Ynqkm1ac-RZEMv7FwZA&usqp=CAU',
+        child: Image.network(
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYQhwSIg7wQ5_eL32Ynqkm1ac-RZEMv7FwZA&usqp=CAU',
             fit: BoxFit.fill));
   }
 }
@@ -90,54 +91,54 @@ class _DishesListState extends State<DishesList> {
     String data = await DefaultAssetBundle.of(context)
         .loadString("lib/resources/dishes.json");
     var jsonData = jsonDecode(data);
-
-    jsonData.forEach((data) {
-      Dish dish = Dish(
-              data["name"],
-              data["imageURL"],
-              List<String>.from(data["ingredients"]),
-              List<String>.from(data["cookingSteps"]));
-      dishes.add(dish);
-    });
+    dishes = jsonData
+        .map<Dish>((e) => Dish(
+            e["name"],
+            e["imageURL"],
+            List<String>.from(e["ingredients"]),
+            List<String>.from(e["cookingSteps"])))
+        .toList();
   }
 
   @override
   Widget build(BuildContext context) {
-        return FutureBuilder(
-          future: getData(),
-          builder: (context, snapshot) => 
-          Align(
-      alignment: Alignment.centerLeft,
-      child: Column(
-        children: [
-          Row(
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              const Text(
-                'Dishes List',
-                textAlign: TextAlign.left,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+    return FutureBuilder(
+        future: getData(),
+        builder: (context, snapshot) => Align(
+              alignment: Alignment.centerLeft,
+              child: Column(
+                children: [
+                  Container(
+                    height: 45,
+                    alignment: Alignment.centerLeft,
+                    child: const Text(
+                      'Dishes List',
+                      textAlign: TextAlign.left,
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Container(height: 10),
+                  ListView.separated(
+                    itemCount: dishes.length,
+                    itemBuilder: (context, row) {
+                      return GestureDetector(
+                          child: Text(dishes[row].name),
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        DishDetails(dish: dishes[row])));
+                          });
+                    },
+                    separatorBuilder: (context, row) {
+                      return Container(height: 20);
+                    },
+                    shrinkWrap: true,
+                  )
+                ],
               ),
-            ],
-          ),
-          Container(height: 10),
-          ListView.separated(
-            itemCount: dishes.length,
-            itemBuilder: (context, row) {
-              return GestureDetector(child: Text(dishes[row].name), onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) =>  DishDetails(dish: dishes[row])));
-              });
-            },
-            separatorBuilder: (context, row) {
-              return Container(height: 20);
-            },
-            shrinkWrap: true,
-          )
-        ],
-      ),
-    )
-        );
+            ));
   }
-
-
 }

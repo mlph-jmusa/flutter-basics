@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_basics/apps/dish/dish_list_view_model.dart';
 import 'package:flutter_basics/resources/dish.dart';
 
 import 'dishDetails.dart';
@@ -13,25 +14,11 @@ class DishesList extends StatefulWidget {
 }
 
 class _DishesListState extends State<DishesList> {
-  List<Dish> dishes = [];
-
-  getData() async {
-    String data = await DefaultAssetBundle.of(context)
-        .loadString("lib/resources/dishes.json");
-    var jsonData = jsonDecode(data);
-    dishes = jsonData
-        .map<Dish>((e) => Dish(
-            e["name"],
-            e["imageURL"],
-            List<String>.from(e["ingredients"]),
-            List<String>.from(e["cookingSteps"])))
-        .toList();
-  }
-
+  DishListViewModel viewModel = DishListViewModel();
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: getData(),
+        future: viewModel.getData(context),
         builder: (context, snapshot) => Align(
               alignment: Alignment.centerLeft,
               child: Column(
@@ -48,16 +35,16 @@ class _DishesListState extends State<DishesList> {
                   ),
                   Container(height: 10),
                   ListView.separated(
-                    itemCount: dishes.length,
+                    itemCount: viewModel.dishes.length,
                     itemBuilder: (context, row) {
                       return GestureDetector(
-                          child: Text(dishes[row].name),
+                          child: Text(viewModel.dishes[row].name),
                           onTap: () {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) =>
-                                        DishDetails(dish: dishes[row])));
+                                    builder: (context) => DishDetails(
+                                        dish: viewModel.dishes[row])));
                           });
                     },
                     separatorBuilder: (context, row) {

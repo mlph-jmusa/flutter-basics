@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/apps/dish/image_container.dart';
-
-import 'apps/dish/dishes_list.dart';
+import '../dish/dishes_list.dart';
 
 class MyHomePage extends StatelessWidget {
   final String title;

@@ -2,23 +2,23 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_basics/resources/dish.dart';
+import 'package:flutter_basics/apps/dish/dish_details/dish_details_view_model.dart';
 
 class DishDetails extends StatelessWidget {
-  final Dish dish;
+  final DishDetailsViewModel viewModel;
 
-  const DishDetails({required this.dish, Key? key}) : super(key: key);
+  const DishDetails({required this.viewModel, Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(dish.name)),
+      appBar: AppBar(title: Text(viewModel.nameOfDish())),
       body: SingleChildScrollView(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              Image.network(dish.imageURL,
+              Image.network(viewModel.imageURLOfDish(),
                   height: 250,
                   errorBuilder: ((context, exception, stackTrace) =>
                       const Text("Wrong image URL"))),
@@ -31,7 +31,7 @@ class DishDetails extends StatelessWidget {
               Container(height: 5),
               Align(
                   alignment: Alignment.topLeft,
-                  child: Text(dish.ingredients.join("\n"))),
+                  child: Text(viewModel.ingredientsOfDish())),
               Container(height: 20),
               const Align(
                   alignment: Alignment.topLeft,
@@ -41,7 +41,7 @@ class DishDetails extends StatelessWidget {
               Container(height: 5),
               Align(
                   alignment: Alignment.topLeft,
-                  child: Text(dish.cookingSteps.join("\n"))),
+                  child: Text(viewModel.cookingStepsOfDish())),
             ],
           ),
         ),

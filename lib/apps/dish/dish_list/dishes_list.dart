@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_basics/apps/dish/dish_list_view_model.dart';
+import 'package:flutter_basics/apps/dish/dish_details/dish_details_view_model.dart';
+import 'package:flutter_basics/apps/dish/dish_list/dish_list_view_model.dart';
 
-import 'dishDetails.dart';
+import '../dish_details/dish_details.dart';
 
 class DishesList extends StatefulWidget {
   const DishesList({Key? key}) : super(key: key);
@@ -41,7 +42,8 @@ class _DishesListState extends State<DishesList> {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) => DishDetails(
-                                        dish: viewModel.dishes[row])));
+                                        viewModel: DishDetailsViewModel(
+                                            viewModel.dishes[row]))));
                           });
                     },
                     separatorBuilder: (context, row) {

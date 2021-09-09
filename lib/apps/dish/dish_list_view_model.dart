@@ -13,6 +13,7 @@ void main() {
     await viewModel.getData();
 
     unit_test.expect(viewModel.dishes.length, 4);
+    unit_test.expect(viewModel.dishes, isA<List<Dish>>());
   });
 }
 

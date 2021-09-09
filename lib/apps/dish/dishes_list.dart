@@ -1,8 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_basics/apps/dish/dish_list_view_model.dart';
-import 'package:flutter_basics/resources/dish.dart';
 
 import 'dishDetails.dart';
 

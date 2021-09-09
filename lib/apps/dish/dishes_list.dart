@@ -18,7 +18,7 @@ class _DishesListState extends State<DishesList> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: viewModel.getData(context),
+        future: viewModel.getData(),
         builder: (context, snapshot) => Align(
               alignment: Alignment.centerLeft,
               child: Column(

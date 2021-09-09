@@ -1,31 +1,25 @@
 import 'dart:convert';
-
-import 'package:flutter/material.dart';
-import 'package:flutter_basics/resources/dish.dart';
 import 'package:test/test.dart' as unit_test;
+import 'package:flutter_basics/resources/dish.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
-  testWidgets('Counter value should be incremented',
-      (WidgetTester tester) async {
-    final dishListViewModel = DishListViewModel();
+  TestWidgetsFlutterBinding.ensureInitialized();
 
-    await tester.pumpWidget(Builder(builder: (context) {
-      dishListViewModel.getData(context);
+  unit_test.test('dishes.json has 4 items', () async {
+    DishListViewModel viewModel = DishListViewModel();
 
-      unit_test.expect(dishListViewModel.dishes.length, 4);
+    await viewModel.getData();
 
-      return const Placeholder();
-    }));
+    unit_test.expect(viewModel.dishes.length, 4);
   });
 }
 
 class DishListViewModel {
   List<Dish> dishes = [];
-
-  getData(BuildContext context) async {
-    String data = await DefaultAssetBundle.of(context)
-        .loadString("lib/resources/dishes.json");
+  getData() async {
+    String data = await rootBundle.loadString('lib/resources/dishes.json');
 
     var jsonData = jsonDecode(data);
     dishes = jsonData
